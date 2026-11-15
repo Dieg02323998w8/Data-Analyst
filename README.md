@@ -4,7 +4,7 @@
 
 Estudiante de Ingeniería de Sistemas de la Universidad del Pacífico, con conocimientos en programación, bases de datos, estadística y análisis de información. Interesado en transformar datos en información útil para comprender situaciones, identificar patrones y apoyar la toma de decisiones.
 
-Cuento con conocimientos en **Python, RStudio, MySQL, SQL y Octave**, así como fundamentos de matemáticas aplicadas, modelado de datos y análisis estadístico.
+Cuento con conocimientos en **Python, R, RStudio, Octave, MySQL y SQL**, así como fundamentos de matemáticas aplicadas, modelado de datos y análisis estadístico.
 
 ## 🎯 Perfil profesional
 
@@ -16,10 +16,10 @@ Mi formación en Ingeniería de Sistemas me permite integrar conocimientos de pr
 
 - 📊 **Análisis de datos:** organización, procesamiento, exploración e interpretación de información.
 - 📐 **Estadística:** estadística descriptiva, análisis de variables y métodos estadísticos.
-- 🐍 **Programación para datos:** fundamentos de Python y procesamiento de información.
+- 🐍 **Programación con Python:** fundamentos de programación y procesamiento de información.
 - 📈 **Análisis estadístico con R:** fundamentos de R y utilización de RStudio.
+- 🧮 **Programación con GNU Octave:** análisis numérico, operaciones matemáticas y modelos de regresión.
 - 🗄️ **Bases de datos:** diseño, modelado, administración y consultas SQL.
-- 🧮 **Análisis matemático:** regresión lineal, modelos polinómicos y métodos numéricos.
 - 📉 **Visualización de datos:** representación gráfica e interpretación de resultados.
 - 🔍 **Análisis predictivo:** fundamentos de modelos de regresión y estimación de valores.
 - 💡 **Pensamiento analítico:** identificación de patrones, relaciones y soluciones a problemas.
@@ -30,13 +30,14 @@ Mi formación en Ingeniería de Sistemas me permite integrar conocimientos de pr
 
 <p align="left">
   <img src="https://skillicons.dev/icons?i=python,r" />
+  <img src="https://img.shields.io/badge/GNU%20Octave-0790C0?style=for-the-badge&logo=octave&logoColor=white" />
 </p>
 
 ### 📊 Análisis y estadística
 
 <p align="left">
   <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio&logoColor=white" />
-  <img src="https://img.shields.io/badge/Octave-0790C0?style=for-the-badge&logo=octave&logoColor=white" />
+  <img src="https://img.shields.io/badge/Statistics-Analysis-6C63FF?style=for-the-badge&logo=databricks&logoColor=white" />
   <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" />
 </p>
 
@@ -65,6 +66,7 @@ Mi formación en Ingeniería de Sistemas me permite integrar conocimientos de pr
 - 🗄️ Consultas y gestión de información mediante SQL.
 - 🧮 Aplicación de métodos numéricos a problemas reales.
 - 📚 Exploración y análisis estadístico utilizando RStudio.
+- 🐍 Procesamiento de información mediante Python.
 
 ## 💡 Habilidades
 
@@ -91,18 +93,16 @@ Mi formación en Ingeniería de Sistemas me permite integrar conocimientos de pr
 
 Continuar fortaleciendo mis competencias en análisis de datos, estadística, programación y herramientas de inteligencia de negocios, con el propósito de desarrollar soluciones que permitan convertir grandes cantidades de información en conocimiento útil para la toma de decisiones.
 
----
-
-### 📌 Áreas de interés
+## 📌 Áreas de interés
 
 `Data Analytics` · `Data Science` · `Business Intelligence` · `Statistical Analysis` · `Data Visualization` · `Predictive Analytics`
-
-### 👨‍💻 Tecnologías
-
-**Python | R | RStudio | MySQL | SQL | Octave | Excel | Git | GitHub**
 
 ---
 
 <p align="center">
+  <b>👨‍💻 Tecnologías</b>
+  <br><br>
+  Python · R · RStudio · GNU Octave · MySQL · SQL · Excel · Git · GitHub
+  <br><br>
   <b>📊 Transformando datos en información, e información en conocimiento.</b>
 </p>
