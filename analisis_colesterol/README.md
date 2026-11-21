@@ -20,21 +20,7 @@ Se trabaja con un conjunto de datos sintéticos de **6.500 registros**, almacena
 - Estimar probabilidades de presentar colesterol alto.
 - Evaluar el rendimiento del modelo predictivo.
 - Representar los resultados mediante gráficos estadísticos.
-
-## 📂 Estructura del proyecto
-
-```text
-Analisis-Colesterol-R/
-│
-├── analisis_colesterol_6500_registros.xlsx
-│
-├── modelo_predictivo_colesterol.R
-│
-├── grafico_colesterol_por_factores.png
-│
-└── README.md
-```
-
+  
 ## 📊 Conjunto de datos
 
 El archivo `analisis_colesterol_6500_registros.xlsx` contiene 6.500 registros y tres hojas de trabajo:
