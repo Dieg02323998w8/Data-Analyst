@@ -27,8 +27,10 @@
 - [Integridad referencial](#-integridad-referencial)
 - [Vistas e índices](#-vistas-e-índices)
 - [Consultas de práctica](#-consultas-de-práctica)
-- [Validación de datos](#-validación-de-datos)
+- [Validación y calidad de los datos](#-validación-y-calidad-de-los-datos)
 - [Tecnologías y herramientas](#-tecnologías-y-herramientas)
+- [Requisitos](#-requisitos)
+- [Sobre los datos](#-sobre-los-datos)
 
 ## ✨ Características
 
