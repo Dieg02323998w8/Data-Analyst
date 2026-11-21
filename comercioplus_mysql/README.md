@@ -18,19 +18,21 @@
 
 ## 📌 Contenido
 
-- [Características](#-características)
-- [Volumen de datos](#-volumen-de-datos)
-- [Archivos](#-archivos)
-- [Instalación](#-instalación)
-- [Estructura de la base de datos](#-estructura-de-la-base-de-datos)
-- [Modelo entidad-relación](#-modelo-entidad-relación)
-- [Integridad referencial](#-integridad-referencial)
-- [Vistas e índices](#-vistas-e-índices)
-- [Consultas de práctica](#-consultas-de-práctica)
-- [Validación y calidad de los datos](#-validación-y-calidad-de-los-datos)
-- [Tecnologías y herramientas](#-tecnologías-y-herramientas)
-- [Requisitos](#-requisitos)
-- [Sobre los datos](#-sobre-los-datos)
+- [Características](#comercioplus-caracteristicas)
+- [Volumen de datos](#comercioplus-volumen-datos)
+- [Archivos](#comercioplus-archivos)
+- [Instalación](#comercioplus-instalacion)
+- [Estructura de la base de datos](#comercioplus-estructura-base-datos)
+- [Modelo entidad-relación](#comercioplus-modelo-entidad-relacion)
+- [Integridad referencial](#comercioplus-integridad-referencial)
+- [Vistas e índices](#comercioplus-vistas-indices)
+- [Consultas de práctica](#comercioplus-consultas-practica)
+- [Validación y calidad de los datos](#comercioplus-validacion-calidad-datos)
+- [Tecnologías y herramientas](#comercioplus-tecnologias-herramientas)
+- [Requisitos](#comercioplus-requisitos)
+- [Sobre los datos](#comercioplus-sobre-los-datos)
+
+<a name="comercioplus-caracteristicas"></a>
 
 ## ✨ Características
 
@@ -41,8 +43,10 @@
 | 🔗 Integridad referencial | 27 restricciones `FOREIGN KEY` |
 | 👁️ Vistas | 3 vistas para consultar información consolidada |
 | ⚡ Índices | 4 índices adicionales para apoyar consultas frecuentes |
-| 📊 Consultas | 28 ejemplos entre el script principal y el archivo complementario |
+| 📊 Consultas | 50 ejercicios: 10 consultas en el script principal y 40 ejercicios complementarios |
 | 🧠 SQL avanzado | Subconsultas, agregaciones, anti-joins y funciones de ventana |
+
+<a name="comercioplus-volumen-datos"></a>
 
 ## 📈 Volumen de datos
 
@@ -75,12 +79,16 @@ La base contiene **23 tablas y 6.960 registros**.
 | `devoluciones` | 17 | `detalle_devolucion` | 17 |
 | `resenas` | 493 | | |
 
+<a name="comercioplus-archivos"></a>
+
 ## 📁 Archivos
 
 | Archivo | Descripción |
 |---|---|
 | [`ComercioPlus_MySQL.sql`](ComercioPlus_MySQL.sql) | Script principal: crea la base de datos, las 23 tablas, inserta los datos, crea las vistas y los índices. Incluye 10 consultas comentadas. |
-| [`Consultas_Practica_ComercioPlus.sql`](Consultas_Practica_ComercioPlus.sql) | Banco complementario con 18 consultas SQL listas para ejecutar. |
+| [`Consultas_Practica_ComercioPlus.sql`](Consultas_Practica_ComercioPlus.sql) | Banco complementario con 40 ejercicios SQL (consultas, DML controlado, transacciones, funciones, procedimientos, triggers y EXPLAIN). |
+
+<a name="comercioplus-instalacion"></a>
 
 ## 🚀 Instalación
 
@@ -107,6 +115,18 @@ mysql -u root -p ComercioPlus < Consultas_Practica_ComercioPlus.sql
 
 El segundo comando selecciona explícitamente la base `ComercioPlus` antes de ejecutar el banco de consultas.
 
+<a name="comercioplus-estructura-base-datos"></a>
+
+
+### Banco de ejercicios SQL
+
+El proyecto incluye **50 ejercicios en total**: 10 consultas comentadas en `ComercioPlus_MySQL.sql` y 40 ejercicios complementarios en `Consultas_Practica_ComercioPlus.sql`.
+
+El banco complementario está numerado del 11 al 50 y cubre filtros, agregaciones, JOIN, subconsultas, `EXISTS`, `UNION`, CTE, funciones de ventana, transacciones, operaciones DML, funciones y procedimientos almacenados, triggers y `EXPLAIN`.
+
+> [!IMPORTANT]
+> Los ejercicios 44 al 49 contienen operaciones de modificación o creación de objetos. Se presentan como prácticas opcionales y deben ejecutarse individualmente, revisando primero sus comentarios. Los ejemplos de modificación usan transacciones con `ROLLBACK` cuando corresponde. El ejercicio 46 contiene un SKU de marcador (`SKU-DE-EJEMPLO`) que debe sustituirse por uno real antes de probarlo. El ejercicio 49 crea una tabla de auditoría y un trigger adicional. El ejercicio 50 propone un índice opcional: evalúa primero el plan con `EXPLAIN`.
+
 ## 🧩 Estructura de la base de datos
 
 | Módulo | Tablas | Función |
@@ -118,6 +138,8 @@ El segundo comando selecciona explícitamente la base `ComercioPlus` antes de ej
 | 💳 Pagos | `metodos_pago`, `pagos` | Registra los medios y estados de pago. |
 | 🚚 Logística | `transportadoras`, `envios` | Administra transportadoras y seguimiento de envíos. |
 | ↩️ Posventa | `devoluciones`, `detalle_devolucion`, `resenas` | Gestiona devoluciones y opiniones de productos. |
+
+<a name="comercioplus-modelo-entidad-relacion"></a>
 
 ## 🗺️ Modelo entidad-relación
 
@@ -143,7 +165,7 @@ erDiagram
     empleados o|--o{ pedidos : atiende
     direcciones ||--o{ pedidos : destino
 
-    pedidos ||--|{ detalle_pedido : contiene
+    pedidos ||--o{ detalle_pedido : contiene
     productos ||--o{ detalle_pedido : aparece_en
 
     pedidos ||--o{ pedido_cupon : aplica
@@ -156,7 +178,7 @@ erDiagram
     transportadoras ||--o{ envios : transporta
 
     pedidos ||--o{ devoluciones : origina
-    devoluciones ||--|{ detalle_devolucion : contiene
+    devoluciones ||--o{ detalle_devolucion : contiene
     productos ||--o{ detalle_devolucion : devuelve
 
     clientes ||--o{ resenas : escribe
@@ -171,6 +193,8 @@ erDiagram
 - **NOT NULL:** obliga a proporcionar un valor.
 - **1:N:** un registro de una tabla puede relacionarse con varios registros de otra.
 - **1:1:** relación de uno a uno; por ejemplo, un pedido puede tener como máximo un envío registrado.
+
+<a name="comercioplus-integridad-referencial"></a>
 
 ## 🔐 Integridad referencial
 
@@ -219,6 +243,8 @@ ORDER BY TABLE_NAME;
 
 > **Nota técnica:** el script desactiva temporalmente `FOREIGN_KEY_CHECKS` durante la carga masiva y vuelve a activarlo al finalizar. MySQL no vuelve a validar automáticamente las filas cargadas mientras la comprobación estaba desactivada. Por eso, si modificas los datos de inserción, conviene ejecutar consultas de auditoría para detectar posibles registros huérfanos.
 
+<a name="comercioplus-vistas-indices"></a>
+
 ## 👁️ Vistas e índices
 
 ### Vistas
@@ -249,30 +275,23 @@ LIMIT 10;
 
 Estos índices complementan los índices que MySQL crea para las claves primarias y las restricciones únicas.
 
+<a name="comercioplus-consultas-practica"></a>
+
 ## 🧪 Consultas de práctica
 
-El proyecto incluye **28 consultas de ejemplo**: 10 comentadas al final del script principal y 18 en el archivo complementario.
+El proyecto incluye **50 ejercicios en total**: 10 consultas comentadas al final del script principal y 40 ejercicios complementarios numerados del 11 al 50.
 
-| N.º | Consulta | Conceptos |
-|---:|---|---|
-| 1 | Top 10 productos más vendidos | `JOIN`, `SUM`, `GROUP BY`, `LIMIT` |
-| 2 | Total facturado por vendedor | `LEFT JOIN`, `COUNT`, `SUM` |
-| 3 | Clientes con más de cinco pedidos | `HAVING` |
-| 4 | Ventas por categoría | JOIN de varias tablas y agregación |
-| 5 | Promedio de pedidos por estado | `AVG`, `ROUND` |
-| 6 | Pedidos superiores al promedio | Subconsulta escalar |
-| 7 | Inventario consolidado por producto | `SUM`, `GROUP BY` |
-| 8 | Devoluciones por motivo | Agrupación y ordenamiento |
-| 9 | Clientes que compraron tecnología | `DISTINCT`, múltiples JOIN |
-| 10 | Ranking de productos por ventas | `DENSE_RANK()` |
-| 11 | Compras acumuladas por cliente | `SUM() OVER()` |
-| 12 | Envíos por transportadora | `LEFT JOIN`, agregaciones |
-| 13 | Productos sin reseñas | Anti-join, `IS NULL` |
-| 14 | Cupones más utilizados | `LEFT JOIN`, `COUNT` |
-| 15 | Ventas mensuales | `YEAR()`, `MONTH()` |
-| 16 | Productos por proveedor | `LEFT JOIN`, `COUNT` |
-| 17 | Pedidos enviados sin envío registrado | Validación de datos |
-| 18 | Indicadores generales | Subconsultas escalares |
+| Rango | Nivel | Temas principales |
+|---|---|---|
+| 1–10 | Básico e intermedio | Consultas de catálogo, ventas, clientes, inventario, pagos y márgenes |
+| 11–28 | Intermedio | JOIN, agregaciones, HAVING, subconsultas, funciones de ventana, CTE y análisis de indicadores |
+| 29–43 | Intermedio y avanzado | Filtros, `CASE`, `EXISTS`, `NOT EXISTS`, `UNION`, subconsultas correlacionadas, CTE, `LAG` y auditoría de datos |
+| 44–46 | DML y transacciones | `UPDATE`, `INSERT`, `START TRANSACTION` y `ROLLBACK` en ejemplos controlados |
+| 47–49 | Programación SQL | Función almacenada, procedimiento almacenado y trigger de auditoría |
+| 50 | Optimización | `EXPLAIN` e inspección de índices |
+
+Los 40 ejercicios complementarios incluyen enunciados en los comentarios y soluciones SQL. Para mantener el conjunto de datos original, las operaciones de modificación se encuentran separadas y no se ejecutan al importar el script principal.
+
 
 ### Ejemplo: ranking de productos por ventas
 
@@ -315,6 +334,8 @@ JOIN productos pr
 ORDER BY p.fecha_pedido DESC;
 ```
 
+<a name="comercioplus-validacion-calidad-datos"></a>
+
 ## 🧹 Validación y calidad de los datos
 
 Los datos son sintéticos y se generaron para practicar consultas. Algunos escenarios pueden contener inconsistencias intencionales o derivadas de la generación aleatoria, útiles para ejercicios de auditoría y limpieza.
@@ -334,6 +355,8 @@ Estas situaciones permiten practicar:
 - Limpieza y transformación de datos.
 - Diseño de restricciones adicionales.
 
+<a name="comercioplus-tecnologias-herramientas"></a>
+
 ## 🛠️ Tecnologías y herramientas
 
 | Tecnología | Uso |
@@ -345,12 +368,16 @@ Estas situaciones permiten practicar:
 | Visual Studio Code | Edición de archivos SQL |
 | Mermaid | Visualización del modelo entidad-relación |
 
+<a name="comercioplus-requisitos"></a>
+
 ## 📋 Requisitos
 
 - MySQL Server 8.0 o superior.
 - MySQL Workbench, DBeaver, VS Code con extensión MySQL o terminal.
 - Permisos para crear y eliminar bases de datos.
 - Funciones de ventana disponibles en MySQL 8.0+ para las consultas que las utilizan.
+
+<a name="comercioplus-sobre-los-datos"></a>
 
 ## 📝 Sobre los datos
 
