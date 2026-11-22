@@ -202,22 +202,6 @@ python app.py
 
 ---
 
-## 📁 Estructura general del proyecto
-
-```text
-DataAnalyst-Pro/
-│
-├── app.py
-│
-├── requirements.txt
-│
-├── README.md
-│
-└── Otros archivos y recursos necesarios
-```
-
----
-
 ## 🔄 Flujo de trabajo
 
 El funcionamiento general de DataAnalyst Pro se desarrolla mediante las siguientes etapas:
